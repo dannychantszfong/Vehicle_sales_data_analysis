@@ -3,6 +3,21 @@
 ## Overview
 This project provides a comprehensive analysis of vehicle sales data, focusing on data preprocessing, feature engineering, market trends, and seller performance. Utilizing various data science techniques, the project uncovers key insights into car pricing dynamics, market segmentation, and seller strategies, offering valuable information for stakeholders in the automotive industry.
 
+## Prerequisites
+- Python 3.8 or higher
+- pip package manager
+- Basic understanding of data analysis and Python programming
+- Minimum 8GB RAM recommended for large dataset processing
+
+## Technologies Used
+- **Python Libraries**:
+  - pandas: Data manipulation and analysis
+  - numpy: Numerical computing
+  - scikit-learn: Machine learning algorithms
+  - matplotlib/seaborn: Data visualization
+  - statsmodels: Time series analysis
+  - jupyter: Interactive development
+
 ## Project Structure
 ```
 ├── Data/                          # Raw and processed data files
@@ -39,24 +54,55 @@ This project provides a comprehensive analysis of vehicle sales data, focusing o
   - Time series analysis of sales patterns
   - Predictive modeling for price forecasting
 
-## Setup Instructions
+## Installation & Setup Instructions
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/Vehicle_sales_data_analysis.git
+git clone https://github.com/dannychantszfong/Vehicle_sales_data_analysis.git
 cd Vehicle_sales_data_analysis
 ```
 
-2. Install required dependencies:
+2. Create and activate a virtual environment (recommended):
+```bash
+# Windows
+python -m venv venv
+.\venv\Scripts\activate
+
+# Linux/Mac
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. Install required dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Run the analysis scripts in the following order:
+4. Run the analysis scripts in the following order:
    - `Data_cleaning_and_preprocess.py`
    - `Feature_Engieering_And_Selection.py`
    - `EDA.py`
    - Other analysis scripts as needed
+
+## Example Outputs
+Here are some key insights you can expect from running the analysis:
+- Market trend visualizations showing price variations across different car makes
+- Seasonal patterns in vehicle sales
+- Clustering results showing distinct market segments
+- Predictive model performance metrics
+- Seller performance rankings and analysis
+
+For detailed visualizations and results, check the `Img/` directory after running the scripts.
+
+## Data Dictionary
+Key variables in the dataset include:
+- `make`: Car manufacturer
+- `model`: Car model name
+- `year`: Manufacturing year
+- `price`: Sale price
+- `mileage`: Total miles driven
+- `condition`: Vehicle condition (New/Used)
+[Add more variables as needed]
 
 ## Main Scripts Description
 
@@ -79,19 +125,42 @@ Detailed analysis results can be found in the following locations:
 - Classification results in the `Data_Classification/` directory
 
 ## License
-This project is proprietary. All rights reserved. The content is provided for viewing and educational purposes only.
+This project is licensed for personal and academic use only. Commercial use is not permitted. You are free to:
+
+- Download and use the software
+- Modify the code
+- Share the software
+
+Under the following conditions:
+
+- You must give appropriate credit by including the original author's name (Danny Chan)
+- You may not use this software for commercial purposes
+- You must include this license notice in any copy or modification of the software
 
 ## Author
-Tsz Fong Chan
+Danny Chan
 
 ## Acknowledgments
 - Special thanks to Syed Anwar Afridi for providing the dataset
 - Thanks to all contributors and reviewers
 
 ## Contact
-For any inquiries or further information, please feel free to reach out through:
-- GitHub Issues
-- Email: [Your contact information]
+- **Author**: Danny Chan
+- **Email**: w1819419@my.westminster.ac.uk
+- **LinkedIn**: Tsz Fong Chan
+- **GitHub**: @dannychantszfong
 
 ---
 **Note**: This project is continuously being updated with new analyses and insights. Check back regularly for updates.
+
+## Troubleshooting
+Common issues and solutions:
+1. **Memory Error**: Try reducing the chunk size in data processing scripts
+2. **Missing Dependencies**: Ensure all requirements are installed via `pip install -r requirements.txt`
+3. **Data Loading Issues**: Verify the data file is in the correct location and format
+
+## Contributing
+While this project is primarily for personal and academic use, suggestions and bug reports are welcome:
+1. Fork the repository
+2. Create your feature branch
+3. Submit a pull request with a clear description of changes
