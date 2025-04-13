@@ -137,8 +137,6 @@ Under the following conditions:
 - You may not use this software for commercial purposes
 - You must include this license notice in any copy or modification of the software
 
-## Author
-Danny Chan
 
 ## Acknowledgments
 - Special thanks to Syed Anwar Afridi for providing the dataset
@@ -151,7 +149,7 @@ Danny Chan
 - **GitHub**: @dannychantszfong
 
 ---
-**Note**: This project is continuously being updated with new analyses and insights. Check back regularly for updates.
+**Note**: This project has been completed. All analyses and implementations are finalized.
 
 ## Troubleshooting
 Common issues and solutions:
