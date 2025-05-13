@@ -1,7 +1,7 @@
 # Vehicle Sales Data Analysis
 
 ## Overview
-This project provides a comprehensive analysis of vehicle sales data, focusing on data preprocessing, feature engineering, market trends, and seller performance. Utilizing various data science techniques, the project uncovers key insights into car pricing dynamics, market segmentation, and seller strategies, offering valuable information for stakeholders in the automotive industry.
+This project provides a comprehensive, end-to-end analysis of vehicle sales data, focusing on data cleaning, feature engineering, exploratory data analysis (EDA), market and seller analysis, clustering, time series analysis, and price prediction modeling. The project leverages Python (pandas, scikit-learn, TensorFlow, matplotlib, seaborn, statsmodels) and Power BI to uncover insights into car pricing, market segmentation, and seller strategies, offering valuable information for stakeholders in the automotive industry.
 
 ## Prerequisites
 - Python 3.8 or higher
@@ -16,16 +16,47 @@ This project provides a comprehensive analysis of vehicle sales data, focusing o
   - scikit-learn: Machine learning algorithms
   - matplotlib/seaborn: Data visualization
   - statsmodels: Time series analysis
+  - tensorflow: Deep learning and regression modeling
+  - joblib: Model serialization
   - jupyter: Interactive development
+- **Power BI**: For dashboarding and reporting
 
 ## Project Structure
 ```
+Vehicle_sales_data_analysis/
 ├── Data/                          # Raw and processed data files
+│   ├── car_prices_ori.csv        # Original dataset
+│   ├── car_prices_clean.csv      # Cleaned dataset
+│   └── decomposed_car_sales_resample_period.csv # Time series decomposition output
 ├── Data_Classification/           # Classification analysis scripts
+│   ├── data_classification.py
+│   └── sorted_data/              # Classified CSVs by column value
 ├── Price_Prediction_Model/        # Price prediction model implementation
+│   ├── price_prediction_model_traning.py
+│   ├── price_prediction_model_usage.py
+│   └── scaler/                   # Saved scalers and models
 ├── Img/                          # Generated visualizations and images
-├── *.py                          # Main analysis scripts
-└── README.md                     # Project documentation
+│   ├── Cluster_Analysis_Img/
+│   ├── EDA_img/
+│   ├── Feature_Engieering_And_Selection_Img/
+│   ├── Market_Analysis_Img/
+│   ├── Price_Prediction_Model_Img/
+│   ├── Seller_Analysis_Img/
+│   └── Time_Series_Analysis_Img/
+├── Power BI/                     # Power BI dashboard and report
+│   ├── Vehicle_sales_data_analysis.pbix
+│   └── Vehicle_sales_data_analysis.pdf
+├── Clustering_Analysis.py
+├── Data_cleaning_and_preprocess.py
+├── Descriptive_statistics.py
+├── EDA.py
+├── Feature_Engieering_And_Selection.py
+├── Market_Analysis.py
+├── Seller_Analysis.py
+├── Time_Series_Analysis.py
+├── README.md
+├── LICENSE
+└── Vehicle Sales Data Analysis.pdf
 ```
 
 ## Key Features
@@ -33,22 +64,18 @@ This project provides a comprehensive analysis of vehicle sales data, focusing o
   - Handling missing values, outliers, and data inconsistencies
   - Data validation and quality checks
   - Standardization of data formats
-
 - **Feature Engineering**: 
   - Creation of new features like car age and mileage per year
   - Feature selection and importance analysis
   - Data transformation and scaling
-
 - **Market Analysis**: 
   - Examination of car prices across different makes and models
   - Impact of vehicle condition on pricing
   - Market trend analysis and seasonality patterns
-
 - **Seller Performance Evaluation**: 
   - Analysis of sales volume and average selling prices
   - Seller segmentation and performance metrics
   - Competitive analysis
-
 - **Advanced Analytics**:
   - Clustering and market segmentation using K-means
   - Time series analysis of sales patterns
@@ -99,20 +126,26 @@ Key variables in the dataset include:
 - `make`: Car manufacturer
 - `model`: Car model name
 - `year`: Manufacturing year
-- `price`: Sale price
-- `mileage`: Total miles driven
-- `condition`: Vehicle condition (New/Used)
-[Add more variables as needed]
+- `sellingprice`: Sale price
+- `odometer`: Total miles driven
+- `condition`: Vehicle condition (numeric scale)
+- `mmr`: Manheim Market Report value
+- `saledate`: Date of sale
+- `trim`, `body`, `transmission`, `state`, `color`, `interior`, `seller`, `vin`: Additional vehicle and transaction details
+- [Add more variables as needed]
 
 ## Main Scripts Description
-
 - `Data_cleaning_and_preprocess.py`: Initial data cleaning and preprocessing
 - `Feature_Engieering_And_Selection.py`: Feature creation and selection
 - `EDA.py`: Exploratory Data Analysis
+- `Descriptive_statistics.py`: Prints summary statistics for numeric and categorical columns
 - `Market_Analysis.py`: Market trend analysis
 - `Seller_Analysis.py`: Seller performance analysis
 - `Time_Series_Analysis.py`: Temporal pattern analysis
 - `Clustering_Analysis.py`: Market segmentation analysis
+- `Price_Prediction_Model/price_prediction_model_traning.py`: Model training and saving
+- `Price_Prediction_Model/price_prediction_model_usage.py`: Model inference on new data
+- `Data_Classification/data_classification.py`: Interactive data classification and export
 
 ## Data Sources
 The dataset used in this analysis is sourced from Kaggle's Vehicle Sales and Market Trends Dataset, provided by Syed Anwar Afridi.
@@ -123,27 +156,31 @@ Detailed analysis results can be found in the following locations:
 - Statistical summaries in analysis outputs
 - Price prediction models in the `Price_Prediction_Model/` directory
 - Classification results in the `Data_Classification/` directory
+- Power BI dashboard and PDF report in the `Power BI/` directory
+
+## Outputs
+- **Images**: All analysis and model outputs are saved as PNGs in the respective `Img/` subfolders.
+- **Models and Scalers**: Saved in `Price_Prediction_Model/scaler/` for reuse.
+- **Classified Data**: Saved in `Data_Classification/sorted_data/`.
+- **Power BI**: Dashboard and PDF report in `Power BI/`.
 
 ## License
 This project is licensed for personal and academic use only. Commercial use is not permitted. You are free to:
-
 - Download and use the software
 - Modify the code
 - Share the software
 
 Under the following conditions:
-
-- You must give appropriate credit by including the original author's name (Danny Chan)
+- You must give appropriate credit by including the original author's name (Danny Chan / Tsz Fong Chan)
 - You may not use this software for commercial purposes
 - You must include this license notice in any copy or modification of the software
-
 
 ## Acknowledgments
 - Special thanks to Syed Anwar Afridi for providing the dataset
 - Thanks to all contributors and reviewers
 
 ## Contact
-- **Author**: Danny Chan
+- **Author**: Danny Chan (Tsz Fong Chan)
 - **Email**: w1819419@my.westminster.ac.uk
 - **LinkedIn**: Tsz Fong Chan
 - **GitHub**: @dannychantszfong

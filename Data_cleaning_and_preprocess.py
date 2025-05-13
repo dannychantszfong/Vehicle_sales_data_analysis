@@ -62,7 +62,7 @@ def clean_duplicates(df):
 LOCAL_PATH = os.path.dirname(__file__)  # Get local file path
 
 # Load the dataset
-file_path = os.path.join(LOCAL_PATH, 'car_prices_ori.csv')
+file_path = os.path.join(LOCAL_PATH, 'Data\car_prices_ori.csv')
 df = pd.read_csv(file_path)
 
 # Initial statistics
@@ -89,6 +89,6 @@ df = correct_data_types(df)
 df = clean_duplicates(df)
 
 # Save the cleaned dataset
-cleaned_file_path = os.path.join(LOCAL_PATH, 'car_prices_clean.csv')
+cleaned_file_path = os.path.join(LOCAL_PATH, 'Data\car_prices_clean.csv')
 df.to_csv(cleaned_file_path, index=False)
 print(f'Cleaned dataset saved to: {cleaned_file_path}')
